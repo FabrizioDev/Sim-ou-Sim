@@ -1,0 +1,34 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sim ou Sim</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,400,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="conteudo">
+            <h1>Você quer namorar comigo?</h1>
+            <div class="caixa__interno">
+                <button onclick="reproduzirVideo()">Sim</button>
+                <button id="botao-negativo" onmouseover="ocultarGif()" onclick="ocultarGif()">Não</button>
+            </div>
+        </div>
+    </div>
+    <span id="gif">
+        <img src="https://gifdb.com/images/high/scary-mumbling-ghost-c42ncebjyhpszw5t.gif" alt="GIF" id="gif-image" onclick="ocultarGif()">
+    </span>
+    <span id="video-container" class="video-overlay">
+        <video id="video" width="300" height="400" controls>
+          <source src="src/video/video.mp4" type="video/mp4">
+        </video>
+    </span>
+           
+    
+    <script src="src/script.js"></script>
+</body>
+
+</html>
+
