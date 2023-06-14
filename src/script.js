@@ -1,5 +1,6 @@
 let botaoClicado = false;
 let botaoPassadoPorCima = false;
+let contadorAcoes = 0;
 
 function moverBotaoNao() {
   if (!botaoClicado && !botaoPassadoPorCima) {
@@ -26,25 +27,29 @@ function moverBotaoNao() {
 
 document.addEventListener("DOMContentLoaded", function () {
   const botaoNao = document.getElementById("botao-negativo");
+  const gif = document.getElementById("gif");
 
-  botaoNao.addEventListener("click", function () {
+  botaoNao.addEventListener("touchend", function () {
     botaoClicado = true;
     gifClicked = true;
-    const gif = document.getElementById("gif");
-    gif.style.display = "none";
+    contadorAcoes++;
+    if (contadorAcoes >= 5) {
+      gif.style.display = "inline";
+    }
     moverBotaoNao();
   });
 
   botaoNao.addEventListener("mouseover", function () {
     if (!botaoClicado) {
       botaoPassadoPorCima = true;
+      contadorAcoes++;
+      if (contadorAcoes >= 5) {
+        gif.style.display = "inline";
+      }
       moverBotaoNao();
     }
   });
 });
-
-
-  
 
 let clickCount = 0;
 let gifClicked = false;
